@@ -3,42 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trắc nghiệm Hán cổ - 3 phần</title>
+<title>Trắc nghiệm Hán cổ - Từ vựng</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:#f5f1e8;font-family:Arial,sans-serif;color:#1f2937;}
-.top-line{height:10px;background:#0f766e;}
-.header{padding:35px 60px;background:#f3efe7;border-bottom:1px solid #ddd4c5;}
-.header-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
-.title h1{font-size:46px;margin-bottom:10px;}
-.title p{font-size:19px;color:#6b7280;}
-.stats{display:flex;gap:12px;flex-wrap:wrap;}
-.stat{background:white;border-radius:999px;padding:14px 22px;font-weight:bold;font-size:20px;}
-.progress-wrap{margin-top:25px;width:520px;max-width:100%;height:16px;background:#ddd2be;border-radius:999px;overflow:hidden;}
-.progress-bar{width:0%;height:100%;background:#9a6a37;transition:.3s;}
-.main{padding:35px 60px;}
-.toolbar{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:22px;align-items:center;}
-.search{flex:1;min-width:250px;}
-.search input{width:100%;padding:18px;border-radius:20px;border:2px solid #ddd4c5;font-size:18px;}
-.btn{border:none;background:#1f2a44;color:white;border-radius:18px;padding:16px 22px;font-size:18px;font-weight:bold;cursor:pointer;}
-.btn.reset{background:#9a6a37;}
-.btn.part{background:white;color:#1f2937;border:2px solid #ddd4c5;}
-.btn.part.active{background:#0f766e;color:white;border-color:#0f766e;}
-.part-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
-.question{background:#f8f6f1;border:2px solid #ddd4c5;border-radius:30px;padding:30px;margin-bottom:30px;}
-.question-title{font-size:30px;line-height:1.7;margin-bottom:25px;}
-.question-title .num{color:#9a6a37;font-weight:bold;}
-.han{font-size:42px;font-weight:bold;color:#111827;}
-.options{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.option{background:white;border:2px solid #ddd;border-radius:20px;padding:20px;font-size:24px;cursor:pointer;transition:.2s;}
-.option:hover{background:#f3f4f6;}
-.option.correct{background:#dcfce7;border-color:#22c55e;color:#166534;font-weight:bold;}
-.option.wrong{background:#fee2e2;border-color:#ef4444;color:#b91c1c;}
-.result{margin-top:20px;padding:15px 20px;border-radius:16px;font-size:22px;font-weight:bold;display:none;}
-.result.correct{background:#dcfce7;color:#166534;}
-.result.wrong{background:#fee2e2;color:#b91c1c;}
-.hidden{display:none;}
-@media(max-width:900px){.header,.main{padding:25px;}.title h1{font-size:32px;}.options{grid-template-columns:1fr;}.option{font-size:20px;}.btn{width:100%;}.han{font-size:34px;}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f1e8;font-family:Arial,sans-serif;color:#1f2937}
+.top-line{height:10px;background:#0f766e}
+.header{padding:34px 6vw;background:#f3efe7;border-bottom:1px solid #ddd4c5}
+.header-top{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;align-items:flex-start}
+.title h1{font-size:clamp(32px,4vw,56px);font-weight:800;margin-bottom:10px;letter-spacing:-1px}
+.title p{font-size:clamp(16px,1.6vw,20px);color:#6b7280}
+.stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{background:white;border-radius:999px;padding:14px 22px;font-weight:bold;font-size:18px;border:1px solid #e7dfd2;box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.progress-wrap{margin-top:25px;width:560px;max-width:100%;height:16px;background:#ddd2be;border-radius:999px;overflow:hidden}
+.progress-bar{width:0%;height:100%;background:#9a6a37;transition:.3s}
+.main{padding:34px 6vw}
+.tabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.tab{border:none;border-radius:18px;padding:14px 22px;background:#fff;color:#1f2937;font-size:17px;font-weight:700;cursor:pointer;border:1px solid #ddd4c5}
+.tab.active{background:#0f766e;color:#fff}
+.toolbar{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px;align-items:center}
+.search{flex:1;min-width:260px}
+.search input{width:100%;padding:18px 20px;border-radius:20px;border:2px solid #ddd4c5;font-size:18px;background:white;outline:none}
+.btn{border:none;background:#1f2a44;color:white;border-radius:18px;padding:16px 22px;font-size:17px;font-weight:bold;cursor:pointer;transition:.2s}
+.btn:hover,.tab:hover{transform:translateY(-1px)}
+.btn.reset{background:#9a6a37}
+.question{background:#fffefa;border:2px solid #ddd4c5;border-radius:30px;padding:28px;margin-bottom:26px;box-shadow:0 8px 24px rgba(90,60,20,.04)}
+.question-title{font-size:26px;line-height:1.7;margin-bottom:22px}
+.question-title .num{color:#9a6a37;font-weight:bold}
+.han{font-family:"DFKai-SB","BiauKai","KaiTi","STKaiti","標楷體",serif;font-size:46px;line-height:1.35;letter-spacing:3px;color:#000;font-weight:400;vertical-align:middle}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.option{background:white;border:2px solid #ddd;border-radius:20px;padding:18px;font-size:21px;cursor:pointer;transition:.2s}
+.option:hover{background:#f3f4f6}
+.option.correct{background:#dcfce7;border-color:#22c55e;color:#166534;font-weight:bold}
+.option.wrong{background:#fee2e2;border-color:#ef4444;color:#b91c1c}
+.result{margin-top:18px;padding:14px 18px;border-radius:16px;font-size:20px;font-weight:bold;display:none}
+.result.correct{background:#dcfce7;color:#166534}
+.result.wrong{background:#fee2e2;color:#b91c1c}
+.hidden{display:none}
+.footer-note{color:#6b7280;text-align:center;margin:30px 0}
+@media(max-width:900px){.header,.main{padding:24px}.options{grid-template-columns:1fr}.option{font-size:19px}.han{font-size:38px}.btn,.tab{width:100%}}
+@media print{.toolbar,.tabs,.top-line{display:none}body{background:white}.question{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -47,7 +50,7 @@ body{background:#f5f1e8;font-family:Arial,sans-serif;color:#1f2937;}
   <div class="header-top">
     <div class="title">
       <h1>Trắc nghiệm Hán cổ - Từ vựng</h1>
-      <p>Đã chia thành 3 phần. Sai không hiện đáp án đúng, chọn lại đến khi đúng, chọn đúng không khóa lựa chọn.</p>
+      <p>Chia 3 phần từ file PDF. Sai không hiện đáp án đúng, được chọn lại đến khi đúng.</p>
       <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
     </div>
     <div class="stats">
@@ -59,118 +62,165 @@ body{background:#f5f1e8;font-family:Arial,sans-serif;color:#1f2937;}
   </div>
 </div>
 <div class="main">
-  <div class="part-row">
-    <button class="btn part active" onclick="changePart(0,this)">Phần 1</button>
-    <button class="btn part" onclick="changePart(1,this)">Phần 2</button>
-    <button class="btn part" onclick="changePart(2,this)">Phần 3</button>
+  <div class="tabs">
+    <button class="tab active" onclick="selectPart(1,this)">Phần 1</button>
+    <button class="tab" onclick="selectPart(2,this)">Phần 2</button>
+    <button class="tab" onclick="selectPart(3,this)">Phần 3</button>
+    <button class="tab" onclick="selectPart(0,this)">Tất cả</button>
   </div>
   <div class="toolbar">
     <div class="search"><input id="searchInput" type="text" placeholder="Tìm chữ Hán hoặc đáp án..." oninput="filterQuestions()"></div>
     <button class="btn" onclick="window.print()">In trang</button>
-    <button class="btn" onclick="shuffleCurrentQuestions()">Xáo trộn câu hỏi</button>
+    <button class="btn" onclick="shuffleAnswers()">Xáo trộn đáp án</button>
+    <button class="btn" onclick="shuffleQuestions()">Xáo trộn câu hỏi</button>
     <button class="btn reset" onclick="resetQuiz()">Làm lại</button>
   </div>
   <div id="quiz"></div>
+  <div class="footer-note">Font chữ Hán ưu tiên DFKai-SB / 標楷體 nếu máy có cài đặt.</div>
 </div>
 <script>
-const allParts = [[{"han": "惡口", "viet": "ác khẩu"}, {"han": "愛情", "viet": "ái tình"}, {"han": "飲水", "viet": "ẩm thuỷ"}, {"han": "飲酒", "viet": "ẩm tửu"}, {"han": "恩情", "viet": "ân tình"}, {"han": "薄荷", "viet": "bạc hà"}, {"han": "北向", "viet": "bắc hướng"}, {"han": "北京", "viet": "Bắc Kinh"}, {"han": "北風", "viet": "bắc phong"}, {"han": "北國", "viet": "bắc quốc"}, {"han": "白雪", "viet": "bạch tuyết"}, {"han": "白衣", "viet": "bạch y"}, {"han": "貧農", "viet": "bần nông"}, {"han": "冰雪", "viet": "băng tuyết"}, {"han": "保助", "viet": "bảo trợ"}, {"han": "不公", "viet": "bất công"}, {"han": "般若", "viet": "Bát nhã"}, {"han": "不成", "viet": "bất thành"}, {"han": "編撰", "viet": "biên soạn"}, {"han": "編輯", "viet": "biên tập"}, {"han": "平面", "viet": "bình diện"}, {"han": "兵器", "viet": "binh khí"}, {"han": "部長", "viet": "bộ trưởng"}, {"han": "背景", "viet": "bối cảnh"}, {"han": "本能", "viet": "bổn năng"}, {"han": "各位", "viet": "các vị"}, {"han": "禁止", "viet": "cấm chỉ"}, {"han": "感冒", "viet": "cảm mạo"}, {"han": "感情", "viet": "cảm tình"}, {"han": "耕田", "viet": "canh điền"}, {"han": "景遇", "viet": "cảnh ngộ"}, {"han": "景色", "viet": "cảnh sắc"}, {"han": "耕作", "viet": "canh tác"}, {"han": "景象", "viet": "cảnh tượng"}, {"han": "景物", "viet": "cảnh vật"}, {"han": "高級", "viet": "cao cấp"}, {"han": "高等", "viet": "cao đẳng"}, {"han": "高名", "viet": "cao danh"}, {"han": "高堂", "viet": "cao đường"}, {"han": "高明", "viet": "cao minh"}, {"han": "高原", "viet": "cao nguyên"}, {"han": "高人", "viet": "cao nhân"}, {"han": "高年", "viet": "cao niên"}, {"han": "高品", "viet": "cao phẩm"}, {"han": "高士", "viet": "cao sĩ"}, {"han": "高僧", "viet": "cao tăng"}, {"han": "高手", "viet": "cao thủ"}, {"han": "高尚", "viet": "cao thượng"}, {"han": "真如", "viet": "chân như"}, {"han": "正面", "viet": "chánh diện"}, {"han": "政客", "viet": "chánh khách"}, {"han": "制定", "viet": "chế định"}, {"han": "制度", "viet": "chế độ"}, {"han": "製作", "viet": "chế tác"}, {"han": "製造", "viet": "chế tạo"}, {"han": "至公", "viet": "chí công"}, {"han": "至孝", "viet": "chí hiếu"}, {"han": "志向", "viet": "chí hướng"}, {"han": "止血", "viet": "chỉ huyết"}, {"han": "指南", "viet": "chỉ nam"}, {"han": "至仁", "viet": "chí nhân"}, {"han": "至心", "viet": "chí tâm"}, {"han": "至聖", "viet": "chí thánh"}, {"han": "至誠", "viet": "chí thành"}, {"han": "至善", "viet": "chí thiện"}, {"han": "止痛", "viet": "chỉ thống"}, {"han": "至情", "viet": "chí tình"}, {"han": "至尊", "viet": "chí tôn"}, {"han": "瞻仰", "viet": "chiêm ngưỡng"}, {"han": "主編", "viet": "chủ biên"}, {"han": "主公", "viet": "chủ công"}, {"han": "主題", "viet": "chủ đề"}, {"han": "主演", "viet": "chủ diễn"}, {"han": "諸侯", "viet": "chư hầu"}, {"han": "主客", "viet": "chủ khách"}, {"han": "主力", "viet": "chủ lực"}, {"han": "主義", "viet": "chủ nghĩa"}, {"han": "主語", "viet": "chủ ngữ"}, {"han": "主人", "viet": "chủ nhân"}, {"han": "主任", "viet": "chủ nhiệm"}, {"han": "主觀", "viet": "chủ quan"}, {"han": "主權", "viet": "chủ quyền"}, {"han": "主席", "viet": "chủ tịch"}, {"han": "主坐", "viet": "chủ toạ"}, {"han": "主持", "viet": "chủ trì"}, {"han": "主張", "viet": "chủ trương"}, {"han": "主詞", "viet": "chủ từ"}, {"han": "主將", "viet": "chủ tướng"}, {"han": "主意", "viet": "chủ ý"}, {"han": "主要", "viet": "chủ yếu"}, {"han": "諸子", "viet": "chư tử"}, {"han": "諸位", "viet": "chư vị"}, {"han": "證書", "viet": "chứng thư"}, {"han": "種子", "viet": "chủng tử"}, {"han": "公安", "viet": "công an"}, {"han": "公平", "viet": "công bình"}, {"han": "公正", "viet": "công chánh"}, {"han": "公主", "viet": "công chủ"}, {"han": "公公", "viet": "công công"}, {"han": "公共", "viet": "công cộng"}, {"han": "共同", "viet": "cộng đồng"}, {"han": "共和", "viet": "cộng hoà"}, {"han": "公明", "viet": "công minh"}, {"han": "功能", "viet": "công năng"}, {"han": "共產", "viet": "cộng sản"}, {"han": "公所", "viet": "công sở"}, {"han": "公事", "viet": "công sự"}, {"han": "共事", "viet": "cộng sự"}, {"han": "共作", "viet": "cộng tác"}, {"han": "公子", "viet": "công tử"}, {"han": "舉止", "viet": "cử chỉ"}, {"han": "局面", "viet": "cục diện"}, {"han": "恭敬", "viet": "cung kính"}, {"han": "恭請", "viet": "cung thỉnh"}, {"han": "狂風", "viet": "cuồng phong"}, {"han": "救助", "viet": "cứu trợ"}, {"han": "夜光", "viet": "dạ quang"}, {"han": "多情", "viet": "đa tình"}, {"han": "臺北", "viet": "Đài Bắc"}, {"han": "大哥", "viet": "đại ca"}, {"han": "大志", "viet": "đại chí"}, {"han": "大眾", "viet": "đại chúng"}, {"han": "大名", "viet": "đại danh"}, {"han": "大道", "viet": "đại đạo"}, {"han": "大地", "viet": "đại địa"}, {"han": "大同", "viet": "đại đồng"}, {"han": "大德", "viet": "đại đức"}, {"han": "大家", "viet": "đại gia"}, {"han": "大河", "viet": "đại hà"}, {"han": "大學", "viet": "đại học"}, {"han": "大悟", "viet": "đại ngộ"}, {"han": "大月", "viet": "đại nguyệt"}, {"han": "大人", "viet": "đại nhân"}, {"han": "大夫", "viet": "đại phu"}, {"han": "大山", "viet": "đại sơn"}, {"han": "大師", "viet": "đại sư"}, {"han": "大事", "viet": "đại sự"}, {"han": "大作", "viet": "đại tác"}, {"han": "大乘", "viet": "đại thừa"}], [{"han": "大雪", "viet": "đại tuyết"}, {"han": "大雨", "viet": "đại vũ"}, {"han": "大王", "viet": "đại vương"}, {"han": "代面", "viet": "đại diện"}, {"han": "登報", "viet": "đăng báo"}, {"han": "登記", "viet": "đăng ký"}, {"han": "登樓", "viet": "đăng lâu"}, {"han": "登山", "viet": "đăng sơn"}, {"han": "名色", "viet": "danh sắc"}, {"han": "名望", "viet": "danh vọng"}, {"han": "地面", "viet": "địa diện"}, {"han": "面貌", "viet": "diện mạo"}, {"han": "停止", "viet": "đình chỉ"}, {"han": "短命", "viet": "đoản mệnh"}, {"han": "冬至", "viet": "đông chí"}, {"han": "同病", "viet": "đồng bệnh"}, {"han": "同志", "viet": "đồng chí"}, {"han": "同行", "viet": "đồng hành"}, {"han": "同化", "viet": "đồng hoá"}, {"han": "同學", "viet": "đồng học"}, {"han": "同鄉", "viet": "đồng hương"}, {"han": "同類", "viet": "đồng loại"}, {"han": "同盟", "viet": "đồng minh"}, {"han": "同門", "viet": "đồng môn"}, {"han": "同業", "viet": "đồng nghiệp"}, {"han": "同一", "viet": "đồng nhất"}, {"han": "同年", "viet": "đồng niên"}, {"han": "同事", "viet": "đồng sự"}, {"han": "同心", "viet": "đồng tâm"}, {"han": "同聲", "viet": "đồng thanh"}, {"han": "同時", "viet": "đồng thời"}, {"han": "同情", "viet": "đồng tình"}, {"han": "同意", "viet": "đồng ý"}, {"han": "堂皇", "viet": "đường hoàng"}, {"han": "假冒", "viet": "giả mạo"}, {"han": "家景", "viet": "gia cảnh"}, {"han": "家風", "viet": "gia phong"}, {"han": "家書", "viet": "gia thư"}, {"han": "家長", "viet": "gia trưởng"}, {"han": "降福", "viet": "giáng phước"}, {"han": "降官", "viet": "giáng quan"}, {"han": "河伯", "viet": "Hà bá"}, {"han": "夏至", "viet": "hạ chí"}, {"han": "下降", "viet": "hạ giáng"}, {"han": "荷花", "viet": "hà hoa"}, {"han": "河內", "viet": "Hà Nội"}, {"han": "行李", "viet": "hành lý"}, {"han": "形容", "viet": "hình dung"}, {"han": "形態", "viet": "hình thái"}, {"han": "護照", "viet": "hộ chiếu"}, {"han": "湖南", "viet": "Hồ Nam"}, {"han": "和平", "viet": "hoà bình"}, {"han": "花季", "viet": "hoa quý"}, {"han": "火山", "viet": "hoả sơn"}, {"han": "和尚", "viet": "hoà thượng"}, {"han": "完成", "viet": "hoàn thành"}, {"han": "黃牛", "viet": "hoàng ngưu"}, {"han": "學制", "viet": "học chế"}, {"han": "悔過", "viet": "hối quá"}, {"han": "許可", "viet": "hứa khả"}, {"han": "向外", "viet": "hướng ngoại"}, {"han": "向內", "viet": "hướng nội"}, {"han": "向善", "viet": "hướng thiện"}, {"han": "向上", "viet": "hướng thượng"}, {"han": "有形", "viet": "hữu hình"}, {"han": "兄長", "viet": "huynh trưởng"}, {"han": "希望", "viet": "hy vọng"}, {"han": "可敬", "viet": "khả kính"}, {"han": "可能", "viet": "khả năng"}, {"han": "可疑", "viet": "khả nghi"}, {"han": "可觀", "viet": "khả quan"}, {"han": "可貴", "viet": "khả quý"}, {"han": "客店", "viet": "khách điếm"}, {"han": "客堂", "viet": "khách đường"}, {"han": "客氣", "viet": "khách khí"}, {"han": "客觀", "viet": "khách quan"}, {"han": "器用", "viet": "khí dụng"}, {"han": "苦瓜", "viet": "khổ qua"}, {"han": "起事", "viet": "khởi sự"}, {"han": "孔子", "viet": "Khổng Tử"}, {"han": "見面", "viet": "kiến diện"}, {"han": "京都", "viet": "kinh đô"}, {"han": "京師", "viet": "kinh sư"}, {"han": "京成", "viet": "kinh thành"}, {"han": "禮拜", "viet": "lễ bái"}, {"han": "禮堂", "viet": "lễ đường"}, {"han": "禮誦", "viet": "lễ tụng"}, {"han": "路面", "viet": "lộ diện"}, {"han": "論語", "viet": "Luận Ngữ"}, {"han": "六書", "viet": "lục thư"}, {"han": "兩舌", "viet": "lưỡng thiệt"}, {"han": "留學", "viet": "lưu học"}, {"han": "留客", "viet": "lưu khách"}, {"han": "留心", "viet": "lưu tâm"}, {"han": "留神", "viet": "lưu thần"}, {"han": "留意", "viet": "lưu ý"}, {"han": "離開", "viet": "ly khai"}, {"han": "孟子", "viet": "Mạnh Tử"}, {"han": "冒名", "viet": "mạo danh"}, {"han": "冒險", "viet": "mạo hiểm"}, {"han": "冒犯", "viet": "mạo phạm"}, {"han": "冒稱", "viet": "mạo xưng"}, {"han": "矛盾", "viet": "mâu thuẫn"}, {"han": "迷津", "viet": "mê tân"}, {"han": "免強", "viet": "miễn cưỡng"}, {"han": "免役", "viet": "miễn dịch"}, {"han": "免禮", "viet": "miễn lễ"}, {"han": "免費", "viet": "miễn phí"}, {"han": "免官", "viet": "miễn quan"}, {"han": "免稅", "viet": "miễn thuế"}, {"han": "免罪", "viet": "miễn tội"}, {"han": "免除", "viet": "miễn trừ"}, {"han": "免死", "viet": "miễn tử"}, {"han": "廟堂", "viet": "miếu đường"}, {"han": "木魚", "viet": "mộc ngư"}, {"han": "南哀", "viet": "Nam Ai"}, {"han": "南部", "viet": "Nam bộ"}, {"han": "南針", "viet": "nam châm"}, {"han": "南面", "viet": "nam diện"}, {"han": "南定", "viet": "Nam định"}, {"han": "南郊", "viet": "Nam Giao"}, {"han": "南海", "viet": "Nam Hải"}, {"han": "南向", "viet": "nam hướng"}, {"han": "南柯", "viet": "Nam kha"}, {"han": "南人", "viet": "nam nhân"}, {"han": "南非", "viet": "Nam phi"}, {"han": "能力", "viet": "năng lực"}, {"han": "梧桐", "viet": "ngô đồng"}, {"han": "外公", "viet": "ngoại công"}, {"han": "外長", "viet": "ngoại trưởng"}, {"han": "五金", "viet": "ngũ kim"}, {"han": "漁業", "viet": "ngư nghiệp"}, {"han": "魚肉", "viet": "ngư nhục"}, {"han": "漁翁", "viet": "ngư ông"}, {"han": "漁船", "viet": "ngư thuyền"}, {"han": "願望", "viet": "nguyện vọng"}, {"han": "月食", "viet": "nguyệt thực"}, {"han": "人面", "viet": "nhân diện"}, {"han": "日光", "viet": "nhật quang"}], [{"han": "日食", "viet": "nhật thực"}, {"han": "燃料", "viet": "nhiên liệu"}, {"han": "攝影", "viet": "nhiếp ảnh"}, {"han": "儒風", "viet": "Nho phong"}, {"han": "乳水", "viet": "nhũ thuỷ"}, {"han": "如意", "viet": "như ý"}, {"han": "肉眼", "viet": "nhục nhãn"}, {"han": "內在", "viet": "nội tại"}, {"han": "內助", "viet": "nội trợ"}, {"han": "農具", "viet": "nông cụ"}, {"han": "農民", "viet": "nông dân"}, {"han": "農夫", "viet": "nông phu"}, {"han": "犯戒", "viet": "phạm giới"}, {"han": "反面", "viet": "phản diện"}, {"han": "分離", "viet": "phân ly"}, {"han": "法制", "viet": "pháp chế"}, {"han": "法乳", "viet": "pháp nhũ"}, {"han": "佛堂", "viet": "Phật đường"}, {"han": "佛心", "viet": "Phật tâm"}, {"han": "佛前", "viet": "Phật tiền"}, {"han": "佛子", "viet": "Phật tử"}, {"han": "飛機", "viet": "phi cơ"}, {"han": "風格", "viet": "phong cách"}, {"han": "放逸", "viet": "phóng dật"}, {"han": "父子", "viet": "phụ tử"}, {"han": "諷誦", "viet": "phúng tụng"}, {"han": "方面", "viet": "phương diện"}, {"han": "方向", "viet": "phương hướng"}, {"han": "光景", "viet": "quang cảnh"}, {"han": "歸國", "viet": "quy quốc"}, {"han": "色界", "viet": "sắc giới"}, {"han": "色塵", "viet": "sắc trần"}, {"han": "色蘊", "viet": "sắc uẩn"}, {"han": "懺悔", "viet": "sám hối"}, {"han": "士氣", "viet": "sĩ khí"}, {"han": "士子", "viet": "sĩ tử"}, {"han": "初願", "viet": "sơ nguyện"}, {"han": "初二", "viet": "sơ nhị"}, {"han": "初生", "viet": "sơ sanh"}, {"han": "初心", "viet": "sơ tâm"}, {"han": "山高", "viet": "sơn cao"}, {"han": "山精", "viet": "sơn tinh"}, {"han": "事情", "viet": "sự tình"}, {"han": "師長", "viet": "sư trưởng"}, {"han": "在職", "viet": "tại chức"}, {"han": "在家", "viet": "tại gia"}, {"han": "在下", "viet": "tại hạ"}, {"han": "在心", "viet": "tại tâm"}, {"han": "三寶", "viet": "Tam Bảo"}, {"han": "三光", "viet": "tam quang"}, {"han": "三世", "viet": "tam thế"}, {"han": "贊同", "viet": "tán đồng"}, {"han": "賓客", "viet": "tân khách"}, {"han": "造成", "viet": "tạo thành"}, {"han": "西方", "viet": "tây phương"}, {"han": "深遠", "viet": "thâm viễn"}, {"han": "勝景", "viet": "thắng cảnh"}, {"han": "升降", "viet": "thăng giáng"}, {"han": "清白", "viet": "thanh bạch"}, {"han": "清高", "viet": "thanh cao"}, {"han": "成功", "viet": "thành công"}, {"han": "成立", "viet": "thành lập"}, {"han": "青年", "viet": "thanh niên"}, {"han": "成果", "viet": "thành quả"}, {"han": "清淨", "viet": "thanh tịnh"}, {"han": "成就", "viet": "thành tựu"}, {"han": "成員", "viet": "thành viên"}, {"han": "青春", "viet": "thanh xuân"}, {"han": "匹夫", "viet": "thất phu"}, {"han": "七情", "viet": "thất tình"}, {"han": "譬喻", "viet": "thí dụ"}, {"han": "是非", "viet": "thị phi"}, {"han": "市長", "viet": "thị trưởng"}, {"han": "天氣", "viet": "thiên khí"}, {"han": "千秋", "viet": "thiên thu"}, {"han": "請求", "viet": "thỉnh cầu"}, {"han": "請教", "viet": "thỉnh giáo"}, {"han": "盛衰", "viet": "thịnh suy"}, {"han": "食言", "viet": "thực ngôn"}, {"han": "食品", "viet": "thực phẩm"}, {"han": "食飯", "viet": "thực phạn"}, {"han": "上客", "viet": "thượng khách"}, {"han": "上坐", "viet": "Thượng toạ"}, {"han": "水面", "viet": "thuỷ diện"}, {"han": "水牛", "viet": "thuỷ ngưu"}, {"han": "水精", "viet": "thuỷ tinh"}, {"han": "說客", "viet": "thuyết khách"}, {"han": "仙風", "viet": "tiên phong"}, {"han": "情形", "viet": "tình hình"}, {"han": "精華", "viet": "tinh hoa"}, {"han": "精力", "viet": "tinh lực"}, {"han": "精通", "viet": "tinh thông"}, {"han": "坐落", "viet": "toạ lạc"}, {"han": "坐禪", "viet": "toạ thiền"}, {"han": "全面", "viet": "toàn diện"}, {"han": "全能", "viet": "toàn năng"}, {"han": "最高", "viet": "tối cao"}, {"han": "尊堂", "viet": "tôn đường"}, {"han": "尊長", "viet": "tôn trưởng"}, {"han": "側面", "viet": "trắc diện"}, {"han": "齋戒", "viet": "trai giới"}, {"han": "齋僧", "viet": "trai tăng"}, {"han": "朝堂", "viet": "triều đường"}, {"han": "呈面", "viet": "trình diện"}, {"han": "助給", "viet": "trợ cấp"}, {"han": "助教", "viet": "trợ giáo"}, {"han": "助力", "viet": "trợ lực"}, {"han": "助詞", "viet": "trợ từ"}, {"han": "住持", "viet": "Trụ Trì"}, {"han": "中秋", "viet": "trung thu"}, {"han": "長途", "viet": "trường đồ"}, {"han": "丈夫", "viet": "trượng phu"}, {"han": "長壽", "viet": "trường thọ"}, {"han": "長孫", "viet": "trưởng tôn"}, {"han": "長子", "viet": "trưởng tử"}, {"han": "修行", "viet": "tu hành"}, {"han": "自滿", "viet": "tự mãn"}, {"han": "自燃", "viet": "tự nhiên"}, {"han": "四川", "viet": "Tứ Xuyên"}, {"han": "相同", "viet": "tương đồng"}, {"han": "絕望", "viet": "tuyệt vọng"}, {"han": "避難", "viet": "tỵ nạn"}, {"han": "威望", "viet": "uy vọng"}, {"han": "往昔", "viet": "vãng tích"}, {"han": "圓滿", "viet": "viên mãn"}, {"han": "援助", "viet": "viện trợ"}, {"han": "榮歸", "viet": "vinh quy"}, {"han": "永遠", "viet": "vĩnh viễn"}, {"han": "無形", "viet": "vô hình"}, {"han": "無常", "viet": "vô thường"}, {"han": "妄語", "viet": "vọng ngữ"}, {"han": "雨季", "viet": "vũ quý"}, {"han": "雨衣", "viet": "vũ y"}, {"han": "趨向", "viet": "xu hướng"}, {"han": "出家", "viet": "xuất gia"}, {"han": "衣鉢", "viet": "y bát"}, {"han": "意向", "viet": "ý hướng"}, {"han": "衣服", "viet": "y phục"}, {"han": "衣食", "viet": "y thực"}]];
-let currentPart = 0;
-let questions = [];
-let done = 0, correct = 0, wrong = 0;
+const vocabulary = [{"han": "惡口", "vi": "ác khẩu"}, {"han": "愛情", "vi": "ái tình"}, {"han": "飲水", "vi": "ẩm thuỷ"}, {"han": "飲酒", "vi": "ẩm tửu"}, {"han": "恩情", "vi": "ân tình"}, {"han": "薄荷", "vi": "bạc hà"}, {"han": "北向", "vi": "bắc hướng"}, {"han": "北京", "vi": "Bắc Kinh"}, {"han": "北風", "vi": "bắc phong"}, {"han": "北國", "vi": "bắc quốc"}, {"han": "白雪", "vi": "bạch tuyết"}, {"han": "白衣", "vi": "bạch y"}, {"han": "貧農", "vi": "bần nông"}, {"han": "冰雪", "vi": "băng tuyết"}, {"han": "保助", "vi": "bảo trợ"}, {"han": "不公", "vi": "bất công"}, {"han": "般若", "vi": "Bát nhã"}, {"han": "不成", "vi": "bất thành"}, {"han": "編撰", "vi": "biên soạn"}, {"han": "編輯", "vi": "biên tập"}, {"han": "平面", "vi": "bình diện"}, {"han": "兵器", "vi": "binh khí"}, {"han": "部長", "vi": "bộ trưởng"}, {"han": "背景", "vi": "bối cảnh"}, {"han": "本能", "vi": "bổn năng"}, {"han": "各位", "vi": "các vị"}, {"han": "禁止", "vi": "cấm chỉ"}, {"han": "感冒", "vi": "cảm mạo"}, {"han": "感情", "vi": "cảm tình"}, {"han": "耕田", "vi": "canh điền"}, {"han": "景遇", "vi": "cảnh ngộ"}, {"han": "景色", "vi": "cảnh sắc"}, {"han": "耕作", "vi": "canh tác"}, {"han": "景象", "vi": "cảnh tượng"}, {"han": "景物", "vi": "cảnh vật"}, {"han": "高級", "vi": "cao cấp"}, {"han": "高等", "vi": "cao đẳng"}, {"han": "高名", "vi": "cao danh"}, {"han": "高堂", "vi": "cao đường"}, {"han": "高明", "vi": "cao minh"}, {"han": "高原", "vi": "cao nguyên"}, {"han": "高人", "vi": "cao nhân"}, {"han": "高年", "vi": "cao niên"}, {"han": "高品", "vi": "cao phẩm"}, {"han": "高士", "vi": "cao sĩ"}, {"han": "高僧", "vi": "cao tăng"}, {"han": "高手", "vi": "cao thủ"}, {"han": "高尚", "vi": "cao thượng"}, {"han": "真如", "vi": "chân như"}, {"han": "正面", "vi": "chánh diện"}, {"han": "政客", "vi": "chánh khách"}, {"han": "制定", "vi": "chế định"}, {"han": "制度", "vi": "chế độ"}, {"han": "製作", "vi": "chế tác"}, {"han": "製造", "vi": "chế tạo"}, {"han": "至公", "vi": "chí công"}, {"han": "至孝", "vi": "chí hiếu"}, {"han": "志向", "vi": "chí hướng"}, {"han": "止血", "vi": "chỉ huyết"}, {"han": "指南", "vi": "chỉ nam"}, {"han": "至仁", "vi": "chí nhân"}, {"han": "至心", "vi": "chí tâm"}, {"han": "至聖", "vi": "chí thánh"}, {"han": "至誠", "vi": "chí thành"}, {"han": "至善", "vi": "chí thiện"}, {"han": "止痛", "vi": "chỉ thống"}, {"han": "至情", "vi": "chí tình"}, {"han": "至尊", "vi": "chí tôn"}, {"han": "瞻仰", "vi": "chiêm ngưỡng"}, {"han": "主編", "vi": "chủ biên"}, {"han": "主公", "vi": "chủ công"}, {"han": "主題", "vi": "chủ đề"}, {"han": "主演", "vi": "chủ diễn"}, {"han": "諸侯", "vi": "chư hầu"}, {"han": "主客", "vi": "chủ khách"}, {"han": "主力", "vi": "chủ lực"}, {"han": "主義", "vi": "chủ nghĩa"}, {"han": "主語", "vi": "chủ ngữ"}, {"han": "主人", "vi": "chủ nhân"}, {"han": "主任", "vi": "chủ nhiệm"}, {"han": "主觀", "vi": "chủ quan"}, {"han": "主權", "vi": "chủ quyền"}, {"han": "主席", "vi": "chủ tịch"}, {"han": "主坐", "vi": "chủ toạ"}, {"han": "主持", "vi": "chủ trì"}, {"han": "主張", "vi": "chủ trương"}, {"han": "主詞", "vi": "chủ từ"}, {"han": "主將", "vi": "chủ tướng"}, {"han": "主意", "vi": "chủ ý"}, {"han": "主要", "vi": "chủ yếu"}, {"han": "諸子", "vi": "chư tử"}, {"han": "諸位", "vi": "chư vị"}, {"han": "證書", "vi": "chứng thư"}, {"han": "種子", "vi": "chủng tử"}, {"han": "公安", "vi": "công an"}, {"han": "公平", "vi": "công bình"}, {"han": "公正", "vi": "công chánh"}, {"han": "公主", "vi": "công chủ"}, {"han": "公公", "vi": "công công"}, {"han": "公共", "vi": "công cộng"}, {"han": "共同", "vi": "cộng đồng"}, {"han": "共和", "vi": "cộng hoà"}, {"han": "公明", "vi": "công minh"}, {"han": "功能", "vi": "công năng"}, {"han": "共產", "vi": "cộng sản"}, {"han": "公所", "vi": "công sở"}, {"han": "公事", "vi": "công sự"}, {"han": "共事", "vi": "cộng sự"}, {"han": "共作", "vi": "cộng tác"}, {"han": "公子", "vi": "công tử"}, {"han": "舉止", "vi": "cử chỉ"}, {"han": "局面", "vi": "cục diện"}, {"han": "恭敬", "vi": "cung kính"}, {"han": "恭請", "vi": "cung thỉnh"}, {"han": "狂風", "vi": "cuồng phong"}, {"han": "救助", "vi": "cứu trợ"}, {"han": "夜光", "vi": "dạ quang"}, {"han": "多情", "vi": "đa tình"}, {"han": "臺北", "vi": "Đài Bắc"}, {"han": "大哥", "vi": "đại ca"}, {"han": "大志", "vi": "đại chí"}, {"han": "大眾", "vi": "đại chúng"}, {"han": "大名", "vi": "đại danh"}, {"han": "大道", "vi": "đại đạo"}, {"han": "大地", "vi": "đại địa"}, {"han": "大同", "vi": "đại đồng"}, {"han": "大德", "vi": "đại đức"}, {"han": "大家", "vi": "đại gia"}, {"han": "大河", "vi": "đại hà"}, {"han": "大學", "vi": "đại học"}, {"han": "大悟", "vi": "đại ngộ"}, {"han": "大月", "vi": "đại nguyệt"}, {"han": "大人", "vi": "đại nhân"}, {"han": "大夫", "vi": "đại phu"}, {"han": "大山", "vi": "đại sơn"}, {"han": "大師", "vi": "đại sư"}, {"han": "大事", "vi": "đại sự"}, {"han": "大作", "vi": "đại tác"}, {"han": "大乘", "vi": "đại thừa"}, {"han": "大雪", "vi": "đại tuyết"}, {"han": "大雨", "vi": "đại vũ"}, {"han": "大王", "vi": "đại vương"}, {"han": "代面", "vi": "đại diện"}, {"han": "登報", "vi": "đăng báo"}, {"han": "登記", "vi": "đăng ký"}, {"han": "登樓", "vi": "đăng lâu"}, {"han": "登山", "vi": "đăng sơn"}, {"han": "名色", "vi": "danh sắc"}, {"han": "名望", "vi": "danh vọng"}, {"han": "地面", "vi": "địa diện"}, {"han": "面貌", "vi": "diện mạo"}, {"han": "停止", "vi": "đình chỉ"}, {"han": "短命", "vi": "đoản mệnh"}, {"han": "冬至", "vi": "đông chí"}, {"han": "同病", "vi": "đồng bệnh"}, {"han": "同志", "vi": "đồng chí"}, {"han": "同行", "vi": "đồng hành"}, {"han": "同化", "vi": "đồng hoá"}, {"han": "同學", "vi": "đồng học"}, {"han": "同鄉", "vi": "đồng hương"}, {"han": "同類", "vi": "đồng loại"}, {"han": "同盟", "vi": "đồng minh"}, {"han": "同門", "vi": "đồng môn"}, {"han": "同業", "vi": "đồng nghiệp"}, {"han": "同一", "vi": "đồng nhất"}, {"han": "同年", "vi": "đồng niên"}, {"han": "同事", "vi": "đồng sự"}, {"han": "同心", "vi": "đồng tâm"}, {"han": "同聲", "vi": "đồng thanh"}, {"han": "同時", "vi": "đồng thời"}, {"han": "同情", "vi": "đồng tình"}, {"han": "同意", "vi": "đồng ý"}, {"han": "堂皇", "vi": "đường hoàng"}, {"han": "假冒", "vi": "giả mạo"}, {"han": "家景", "vi": "gia cảnh"}, {"han": "家風", "vi": "gia phong"}, {"han": "家書", "vi": "gia thư"}, {"han": "家長", "vi": "gia trưởng"}, {"han": "降福", "vi": "giáng phước"}, {"han": "降官", "vi": "giáng quan"}, {"han": "河伯", "vi": "Hà bá"}, {"han": "夏至", "vi": "hạ chí"}, {"han": "下降", "vi": "hạ giáng"}, {"han": "荷花", "vi": "hà hoa"}, {"han": "河內", "vi": "Hà Nội"}, {"han": "行李", "vi": "hành lý"}, {"han": "形容", "vi": "hình dung"}, {"han": "形態", "vi": "hình thái"}, {"han": "護照", "vi": "hộ chiếu"}, {"han": "湖南", "vi": "Hồ Nam"}, {"han": "和平", "vi": "hoà bình"}, {"han": "花季", "vi": "hoa quý"}, {"han": "火山", "vi": "hoả sơn"}, {"han": "和尚", "vi": "hoà thượng"}, {"han": "完成", "vi": "hoàn thành"}, {"han": "黃牛", "vi": "hoàng ngưu"}, {"han": "學制", "vi": "học chế"}, {"han": "悔過", "vi": "hối quá"}, {"han": "許可", "vi": "hứa khả"}, {"han": "向外", "vi": "hướng ngoại"}, {"han": "向內", "vi": "hướng nội"}, {"han": "向善", "vi": "hướng thiện"}, {"han": "向上", "vi": "hướng thượng"}, {"han": "有形", "vi": "hữu hình"}, {"han": "兄長", "vi": "huynh trưởng"}, {"han": "希望", "vi": "hy vọng"}, {"han": "可敬", "vi": "khả kính"}, {"han": "可能", "vi": "khả năng"}, {"han": "可疑", "vi": "khả nghi"}, {"han": "可觀", "vi": "khả quan"}, {"han": "可貴", "vi": "khả quý"}, {"han": "客店", "vi": "khách điếm"}, {"han": "客堂", "vi": "khách đường"}, {"han": "客氣", "vi": "khách khí"}, {"han": "客觀", "vi": "khách quan"}, {"han": "器用", "vi": "khí dụng"}, {"han": "苦瓜", "vi": "khổ qua"}, {"han": "起事", "vi": "khởi sự"}, {"han": "孔子", "vi": "Khổng Tử"}, {"han": "見面", "vi": "kiến diện"}, {"han": "京都", "vi": "kinh đô"}, {"han": "京師", "vi": "kinh sư"}, {"han": "京成", "vi": "kinh thành"}, {"han": "禮拜", "vi": "lễ bái"}, {"han": "禮堂", "vi": "lễ đường"}, {"han": "禮誦", "vi": "lễ tụng"}, {"han": "路面", "vi": "lộ diện"}, {"han": "論語", "vi": "Luận Ngữ"}, {"han": "六書", "vi": "lục thư"}, {"han": "兩舌", "vi": "lưỡng thiệt"}, {"han": "留學", "vi": "lưu học"}, {"han": "留客", "vi": "lưu khách"}, {"han": "留心", "vi": "lưu tâm"}, {"han": "留神", "vi": "lưu thần"}, {"han": "留意", "vi": "lưu ý"}, {"han": "離開", "vi": "ly khai"}, {"han": "孟子", "vi": "Mạnh Tử"}, {"han": "冒名", "vi": "mạo danh"}, {"han": "冒險", "vi": "mạo hiểm"}, {"han": "冒犯", "vi": "mạo phạm"}, {"han": "冒稱", "vi": "mạo xưng"}, {"han": "矛盾", "vi": "mâu thuẫn"}, {"han": "迷津", "vi": "mê tân"}, {"han": "免強", "vi": "miễn cưỡng"}, {"han": "免役", "vi": "miễn dịch"}, {"han": "免禮", "vi": "miễn lễ"}, {"han": "免費", "vi": "miễn phí"}, {"han": "免官", "vi": "miễn quan"}, {"han": "免稅", "vi": "miễn thuế"}, {"han": "免罪", "vi": "miễn tội"}, {"han": "免除", "vi": "miễn trừ"}, {"han": "免死", "vi": "miễn tử"}, {"han": "廟堂", "vi": "miếu đường"}, {"han": "木魚", "vi": "mộc ngư"}, {"han": "南哀", "vi": "Nam Ai"}, {"han": "南部", "vi": "Nam bộ"}, {"han": "南針", "vi": "nam châm"}, {"han": "南面", "vi": "nam diện"}, {"han": "南定", "vi": "Nam định"}, {"han": "南郊", "vi": "Nam Giao"}, {"han": "南海", "vi": "Nam Hải"}, {"han": "南向", "vi": "nam hướng"}, {"han": "南柯", "vi": "Nam kha"}, {"han": "南人", "vi": "nam nhân"}, {"han": "南非", "vi": "Nam phi"}, {"han": "能力", "vi": "năng lực"}, {"han": "梧桐", "vi": "ngô đồng"}, {"han": "外公", "vi": "ngoại công"}, {"han": "外長", "vi": "ngoại trưởng"}, {"han": "五金", "vi": "ngũ kim"}, {"han": "漁業", "vi": "ngư nghiệp"}, {"han": "魚肉", "vi": "ngư nhục"}, {"han": "漁翁", "vi": "ngư ông"}, {"han": "漁船", "vi": "ngư thuyền"}, {"han": "願望", "vi": "nguyện vọng"}, {"han": "月食", "vi": "nguyệt thực"}, {"han": "人面", "vi": "nhân diện"}, {"han": "日光", "vi": "nhật quang"}, {"han": "日食", "vi": "nhật thực"}, {"han": "燃料", "vi": "nhiên liệu"}, {"han": "攝影", "vi": "nhiếp ảnh"}, {"han": "儒風", "vi": "Nho phong"}, {"han": "乳水", "vi": "nhũ thuỷ"}, {"han": "如意", "vi": "như ý"}, {"han": "肉眼", "vi": "nhục nhãn"}, {"han": "內在", "vi": "nội tại"}, {"han": "內助", "vi": "nội trợ"}, {"han": "農具", "vi": "nông cụ"}, {"han": "農民", "vi": "nông dân"}, {"han": "農夫", "vi": "nông phu"}, {"han": "犯戒", "vi": "phạm giới"}, {"han": "反面", "vi": "phản diện"}, {"han": "分離", "vi": "phân ly"}, {"han": "法制", "vi": "pháp chế"}, {"han": "法乳", "vi": "pháp nhũ"}, {"han": "佛堂", "vi": "Phật đường"}, {"han": "佛心", "vi": "Phật tâm"}, {"han": "佛前", "vi": "Phật tiền"}, {"han": "佛子", "vi": "Phật tử"}, {"han": "飛機", "vi": "phi cơ"}, {"han": "風格", "vi": "phong cách"}, {"han": "放逸", "vi": "phóng dật"}, {"han": "父子", "vi": "phụ tử"}, {"han": "諷誦", "vi": "phúng tụng"}, {"han": "方面", "vi": "phương diện"}, {"han": "方向", "vi": "phương hướng"}, {"han": "光景", "vi": "quang cảnh"}, {"han": "歸國", "vi": "quy quốc"}, {"han": "色界", "vi": "sắc giới"}, {"han": "色塵", "vi": "sắc trần"}, {"han": "色蘊", "vi": "sắc uẩn"}, {"han": "懺悔", "vi": "sám hối"}, {"han": "士氣", "vi": "sĩ khí"}, {"han": "士子", "vi": "sĩ tử"}, {"han": "初願", "vi": "sơ nguyện"}, {"han": "初二", "vi": "sơ nhị"}, {"han": "初生", "vi": "sơ sanh"}, {"han": "初心", "vi": "sơ tâm"}, {"han": "山高", "vi": "sơn cao"}, {"han": "山精", "vi": "sơn tinh"}, {"han": "事情", "vi": "sự tình"}, {"han": "師長", "vi": "sư trưởng"}, {"han": "在職", "vi": "tại chức"}, {"han": "在家", "vi": "tại gia"}, {"han": "在下", "vi": "tại hạ"}, {"han": "在心", "vi": "tại tâm"}, {"han": "三寶", "vi": "Tam Bảo"}, {"han": "三光", "vi": "tam quang"}, {"han": "三世", "vi": "tam thế"}, {"han": "贊同", "vi": "tán đồng"}, {"han": "賓客", "vi": "tân khách"}, {"han": "造成", "vi": "tạo thành"}, {"han": "西方", "vi": "tây phương"}, {"han": "深遠", "vi": "thâm viễn"}, {"han": "勝景", "vi": "thắng cảnh"}, {"han": "升降", "vi": "thăng giáng"}, {"han": "清白", "vi": "thanh bạch"}, {"han": "清高", "vi": "thanh cao"}, {"han": "成功", "vi": "thành công"}, {"han": "成立", "vi": "thành lập"}, {"han": "青年", "vi": "thanh niên"}, {"han": "成果", "vi": "thành quả"}, {"han": "清淨", "vi": "thanh tịnh"}, {"han": "成就", "vi": "thành tựu"}, {"han": "成員", "vi": "thành viên"}, {"han": "青春", "vi": "thanh xuân"}, {"han": "匹夫", "vi": "thất phu"}, {"han": "七情", "vi": "thất tình"}, {"han": "譬喻", "vi": "thí dụ"}, {"han": "是非", "vi": "thị phi"}, {"han": "市長", "vi": "thị trưởng"}, {"han": "天氣", "vi": "thiên khí"}, {"han": "千秋", "vi": "thiên thu"}, {"han": "請求", "vi": "thỉnh cầu"}, {"han": "請教", "vi": "thỉnh giáo"}, {"han": "盛衰", "vi": "thịnh suy"}, {"han": "食言", "vi": "thực ngôn"}, {"han": "食品", "vi": "thực phẩm"}, {"han": "食飯", "vi": "thực phạn"}, {"han": "上客", "vi": "thượng khách"}, {"han": "上坐", "vi": "Thượng toạ"}, {"han": "水面", "vi": "thuỷ diện"}, {"han": "水牛", "vi": "thuỷ ngưu"}, {"han": "水精", "vi": "thuỷ tinh"}, {"han": "說客", "vi": "thuyết khách"}, {"han": "仙風", "vi": "tiên phong"}, {"han": "情形", "vi": "tình hình"}, {"han": "精華", "vi": "tinh hoa"}, {"han": "精力", "vi": "tinh lực"}, {"han": "精通", "vi": "tinh thông"}, {"han": "坐落", "vi": "toạ lạc"}, {"han": "坐禪", "vi": "toạ thiền"}, {"han": "全面", "vi": "toàn diện"}, {"han": "全能", "vi": "toàn năng"}, {"han": "最高", "vi": "tối cao"}, {"han": "尊堂", "vi": "tôn đường"}, {"han": "尊長", "vi": "tôn trưởng"}, {"han": "側面", "vi": "trắc diện"}, {"han": "齋戒", "vi": "trai giới"}, {"han": "齋僧", "vi": "trai tăng"}, {"han": "朝堂", "vi": "triều đường"}, {"han": "呈面", "vi": "trình diện"}, {"han": "助給", "vi": "trợ cấp"}, {"han": "助教", "vi": "trợ giáo"}, {"han": "助力", "vi": "trợ lực"}, {"han": "助詞", "vi": "trợ từ"}, {"han": "住持", "vi": "Trụ Trì"}, {"han": "中秋", "vi": "trung thu"}, {"han": "長途", "vi": "trường đồ"}, {"han": "丈夫", "vi": "trượng phu"}, {"han": "長壽", "vi": "trường thọ"}, {"han": "長孫", "vi": "trưởng tôn"}, {"han": "長子", "vi": "trưởng tử"}, {"han": "修行", "vi": "tu hành"}, {"han": "自滿", "vi": "tự mãn"}, {"han": "自燃", "vi": "tự nhiên"}, {"han": "四川", "vi": "Tứ Xuyên"}, {"han": "相同", "vi": "tương đồng"}, {"han": "絕望", "vi": "tuyệt vọng"}, {"han": "避難", "vi": "tỵ nạn"}, {"han": "威望", "vi": "uy vọng"}, {"han": "往昔", "vi": "vãng tích"}, {"han": "圓滿", "vi": "viên mãn"}, {"han": "援助", "vi": "viện trợ"}, {"han": "榮歸", "vi": "vinh quy"}, {"han": "永遠", "vi": "vĩnh viễn"}, {"han": "無形", "vi": "vô hình"}, {"han": "無常", "vi": "vô thường"}, {"han": "妄語", "vi": "vọng ngữ"}, {"han": "雨季", "vi": "vũ quý"}, {"han": "雨衣", "vi": "vũ y"}, {"han": "趨向", "vi": "xu hướng"}, {"han": "出家", "vi": "xuất gia"}, {"han": "衣鉢", "vi": "y bát"}, {"han": "意向", "vi": "ý hướng"}, {"han": "衣服", "vi": "y phục"}, {"han": "衣食", "vi": "y thực"}];
+const PART_SIZE = Math.ceil(vocabulary.length / 3);
+let currentPart = 1;
+let currentQuestions = [];
 let answered = {};
+let done = 0, correct = 0, wrong = 0;
 
-function makeQuestions(list){
-  const allAnswers = list.map(x=>x.viet);
-  return list.map((item)=>{
-    let opts = [item.viet];
-    while(opts.length < 4){
-      const pick = allAnswers[Math.floor(Math.random()*allAnswers.length)];
-      if(!opts.includes(pick)) opts.push(pick);
-    }
-    opts = shuffle(opts);
-    return {q:item.han, correct:item.viet, options:opts};
-  });
+function getPartData(part) {
+  if(part === 0) return vocabulary.map((x,i)=>({...x, originalIndex:i}));
+  const start = (part-1) * PART_SIZE;
+  const end = Math.min(start + PART_SIZE, vocabulary.length);
+  return vocabulary.slice(start,end).map((x,i)=>({...x, originalIndex:start+i}));
 }
-function shuffle(arr){
-  const a=[...arr];
-  for(let i=a.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [a[i],a[j]]=[a[j],a[i]];
+
+function makeOptions(correctVi) {
+  const pool = vocabulary.map(x=>x.vi).filter(v=>v !== correctVi);
+  const wrongs = [];
+  while(wrongs.length < 3 && pool.length) {
+    const idx = Math.floor(Math.random()*pool.length);
+    const picked = pool.splice(idx,1)[0];
+    if(!wrongs.includes(picked)) wrongs.push(picked);
+  }
+  return shuffleArray([correctVi, ...wrongs]);
+}
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
   }
   return a;
 }
-function changePart(partIndex,btn){
-  currentPart = partIndex;
-  document.querySelectorAll('.btn.part').forEach(b=>b.classList.remove('active'));
+
+function selectPart(part, btn) {
+  currentPart = part;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
   resetQuiz();
 }
-function renderQuiz(){
+
+function resetQuiz() {
+  done = 0; correct = 0; wrong = 0; answered = {};
+  currentQuestions = getPartData(currentPart).map((item,idx)=>({
+    ...item,
+    id: item.originalIndex,
+    displayIndex: idx + 1,
+    options: makeOptions(item.vi)
+  }));
+  document.getElementById('searchInput').value = '';
+  renderQuiz();
+  updateStats();
+}
+
+function renderQuiz() {
   const quiz = document.getElementById('quiz');
   quiz.innerHTML = '';
-  questions.forEach((item,index)=>{
-    let html = `<div class="question" data-search="${item.q} ${item.correct}">`;
-    html += `<div class="question-title"><span class="num">Câu ${index+1}.</span> <span class="han">${item.q}</span> nghĩa là gì?</div>`;
-    html += `<div class="options">`;
-    item.options.forEach((opt,i)=>{
-      html += `<div class="option" onclick="checkAnswer(this,${index},'${escapeJs(opt)}')">${String.fromCharCode(65+i)}. ${opt}</div>`;
-    });
-    html += `</div><div class="result" id="result-${index}"></div></div>`;
-    quiz.innerHTML += html;
+  currentQuestions.forEach((item, index)=>{
+    const q = document.createElement('div');
+    q.className = 'question';
+    q.dataset.search = (item.han + ' ' + item.vi + ' ' + item.options.join(' ')).toLowerCase();
+    q.innerHTML = `
+      <div class="question-title"><span class="num">Câu ${index+1}.</span> <span class="han">${item.han}</span> nghĩa là gì?</div>
+      <div class="options">
+        ${item.options.map((opt,i)=>`<div class="option" onclick="checkAnswer(this,${index},'${escapeAttr(opt)}')">${String.fromCharCode(65+i)}. ${opt}</div>`).join('')}
+      </div>
+      <div class="result" id="result-${index}"></div>
+    `;
+    quiz.appendChild(q);
   });
 }
-function escapeJs(str){ return String(str).replace(/'/g,"&#39;"); }
-function checkAnswer(el,qIndex,optText){
-  optText = optText.replace(/&#39;/g,"'");
+
+function escapeAttr(str) {
+  return String(str).replace(/'/g,"&#39;").replace(/"/g,"&quot;");
+}
+
+function checkAnswer(el, qIndex, selectedText) {
+  selectedText = selectedText.replace(/&#39;/g,"'").replace(/&quot;/g,'"');
+  const item = currentQuestions[qIndex];
   const resultBox = document.getElementById(`result-${qIndex}`);
   const optionList = el.parentElement.querySelectorAll('.option');
-  optionList.forEach(option=>option.classList.remove('wrong'));
-  if(optText === questions[qIndex].correct){
-    optionList.forEach(option=>option.classList.remove('correct'));
+
+  // Không khóa lựa chọn: mỗi lần bấm đều được kiểm tra lại.
+  // Sai không hiện đáp án đúng: xóa toàn bộ màu xanh/đỏ cũ trước khi đánh dấu.
+  optionList.forEach(option=>{
+    option.classList.remove('wrong');
+    option.classList.remove('correct');
+  });
+
+  if(selectedText === item.vi) {
     el.classList.add('correct');
-    resultBox.style.display='block';
-    resultBox.className='result correct';
-    resultBox.innerHTML='✅ Chính xác';
-    if(!answered[qIndex]){
-      answered[qIndex]=true;
-      done++; correct++;
+    resultBox.style.display = 'block';
+    resultBox.className = 'result correct';
+    resultBox.innerHTML = '✅ Chính xác';
+
+    if(!answered[item.id]) {
+      answered[item.id] = true;
+      done++;
+      correct++;
       updateStats();
     }
-  }else{
+  } else {
     el.classList.add('wrong');
-    resultBox.style.display='block';
-    resultBox.className='result wrong';
-    resultBox.innerHTML='❌ Sai rồi, hãy chọn lại';
+    resultBox.style.display = 'block';
+    resultBox.className = 'result wrong';
+    resultBox.innerHTML = '❌ Sai rồi, hãy chọn lại';
     wrong++;
     updateStats();
-    setTimeout(()=>el.classList.remove('wrong'),600);
+    setTimeout(()=>{ el.classList.remove('wrong'); }, 650);
   }
 }
-function updateStats(){
-  document.getElementById('partName').innerText = currentPart+1;
+
+function updateStats() {
+  document.getElementById('partName').innerText = currentPart === 0 ? 'Tất cả' : currentPart;
   document.getElementById('done').innerText = done;
   document.getElementById('correct').innerText = correct;
   document.getElementById('wrong').innerText = wrong;
-  document.getElementById('total').innerText = questions.length;
-  document.getElementById('progressBar').style.width = ((done/questions.length)*100) + '%';
+  document.getElementById('total').innerText = currentQuestions.length || getPartData(currentPart).length;
+  const total = currentQuestions.length || 1;
+  const percent = (done / total) * 100;
+  document.getElementById('progressBar').style.width = percent + '%';
 }
-function resetQuiz(){
-  done=0; correct=0; wrong=0; answered={};
-  questions = makeQuestions(allParts[currentPart]);
-  document.getElementById('searchInput').value='';
-  renderQuiz(); updateStats();
+
+function shuffleAnswers() {
+  currentQuestions = currentQuestions.map(q=>({...q, options: makeOptions(q.vi)}));
+  renderQuiz();
+  filterQuestions();
 }
-function shuffleCurrentQuestions(){
-  questions = shuffle(questions);
-  answered={}; done=0; correct=0; wrong=0;
-  renderQuiz(); updateStats();
+
+function shuffleQuestions() {
+  currentQuestions = shuffleArray(currentQuestions);
+  renderQuiz();
+  filterQuestions();
 }
-function filterQuestions(){
-  const key = document.getElementById('searchInput').value.toLowerCase().trim();
+
+function filterQuestions() {
+  const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
   document.querySelectorAll('.question').forEach(q=>{
-    q.classList.toggle('hidden', !q.dataset.search.toLowerCase().includes(key));
+    q.classList.toggle('hidden', keyword && !q.dataset.search.includes(keyword));
   });
 }
+
 resetQuiz();
 </script>
 </body>
